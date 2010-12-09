@@ -50,11 +50,11 @@ class ProductTest < ActiveSupport::TestCase
 	bad = %w{zozo.doc moncoco.pdf zouteke.xlsx}
 
 	good.each do |name|
-	     assert new_product(name).valid?,"#{name} should not be valid ! "
+	     assert new_product(name).valid?,"#{name} should not be valid !"
 	end
 
 	bad.each do |name|
-	     assert new_product(name).invalid?,"#{name} should  be valid ! "
+	     assert new_product(name).invalid?,"#{name} should  be valid !"
 	end
      end
 
