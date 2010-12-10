@@ -1,6 +1,9 @@
 require 'test_helper'
 
 class ProductTest < ActiveSupport::TestCase
+
+     fixtures :products
+     
      # Replace this with your real tests.
      test "the truth" do
 	assert true
@@ -58,4 +61,16 @@ class ProductTest < ActiveSupport::TestCase
 	end
      end
 
+
+     test "image is not valid without a unique title" do
+	product  = Product.new(:title => products(:ruby).title,
+			   :description => 'desc wdfsdlfkjs',
+			   :image_url => 'test.jpg',
+			   :price => 1
+		)
+
+	assert !product.save
+	assert_equal "has already been taken", product.errors[:title].join("; ")
+     end
+  
 end
