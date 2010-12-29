@@ -1,0 +1,1329 @@
+Le script a débuté sur mar. 21 déc. 2010 22:44:10 CET
+]0;fox-eye@ubuntu: ~/DEV/rails/depotfox-eye@ubuntu:~/DEV/rails/depot$ rails server
+=> Booting WEBrick
+=> Rails 3.0.1 application starting in development on http://0.0.0.0:3000
+=> Call with -d to detach
+=> Ctrl-C to shutdown server
+[2010-12-21 22:44:17] INFO  WEBrick 1.3.1
+[2010-12-21 22:44:17] INFO  ruby 1.9.2 (2010-08-18) [i686-linux]
+[2010-12-21 22:44:17] INFO  WEBrick::HTTPServer#start: pid=2874 port=3000
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-21 23:42:11 +0100
+  Processing by StoreController#index as HTML
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "carts" ("created_at", "updated_at") VALUES ('2010-12-21 22:42:12.012127', '2010-12-21 22:42:12.012127')[0m
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 20)
+Rendered collection (0.0ms)
+Rendered carts/_cart.html.erb (29.3ms)
+Rendered store/index.html.erb within layouts/application (104.6ms)
+Completed 200 OK in 243ms (Views: 126.9ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/line_items?product_id=4" for 127.0.0.1 at 2010-12-21 23:42:15 +0100
+  Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"DYqF2KkaHbxIwzh45rdcd8sMFgGX7fBoJaZtIwwEiww=", "_"=>"", "product_id"=>"4"}
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE ("carts"."id" = 20) LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 4) ORDER BY title LIMIT 1
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 20) AND ("line_items"."product_id" = 4) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "line_items" ("cart_id", "created_at", "product_id", "quantity", "updated_at") VALUES (20, '2010-12-21 22:42:15.960989', 4, 1, '2010-12-21 22:42:15.960989')
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 20)[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 4) ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (4.7ms)
+Rendered carts/_cart.html.erb (7.5ms)
+Rendered line_items/create.js.rjs (8.9ms)
+Completed 200 OK in 92ms (Views: 25.9ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/line_items?product_id=4" for 127.0.0.1 at 2010-12-21 23:42:17 +0100
+  Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"DYqF2KkaHbxIwzh45rdcd8sMFgGX7fBoJaZtIwwEiww=", "_"=>"", "product_id"=>"4"}
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE ("carts"."id" = 20) LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 4) ORDER BY title LIMIT 1
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 20) AND ("line_items"."product_id" = 4) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "line_items" SET "quantity" = 2, "updated_at" = '2010-12-21 22:42:17.227090' WHERE ("line_items"."id" = 46)
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 20)[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 4) ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (4.6ms)
+Rendered carts/_cart.html.erb (6.9ms)
+Rendered line_items/create.js.rjs (8.1ms)
+Completed 200 OK in 73ms (Views: 12.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/line_items?product_id=4" for 127.0.0.1 at 2010-12-22 00:25:45 +0100
+  Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"DYqF2KkaHbxIwzh45rdcd8sMFgGX7fBoJaZtIwwEiww=", "_"=>"", "product_id"=>"4"}
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE ("carts"."id" = 20) LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 4) ORDER BY title LIMIT 1
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 20) AND ("line_items"."product_id" = 4) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "line_items" SET "quantity" = 3, "updated_at" = '2010-12-21 23:25:45.315373' WHERE ("line_items"."id" = 46)
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 20)[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 4) ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (4.6ms)
+Rendered carts/_cart.html.erb (7.0ms)
+Rendered line_items/create.js.rjs (8.2ms)
+Completed 200 OK in 74ms (Views: 12.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/line_items?product_id=2" for 127.0.0.1 at 2010-12-22 00:25:48 +0100
+  Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"DYqF2KkaHbxIwzh45rdcd8sMFgGX7fBoJaZtIwwEiww=", "_"=>"", "product_id"=>"2"}
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE ("carts"."id" = 20) LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 2) ORDER BY title LIMIT 1
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 20) AND ("line_items"."product_id" = 2) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "line_items" ("cart_id", "created_at", "product_id", "quantity", "updated_at") VALUES (20, '2010-12-21 23:25:48.120904', 2, 1, '2010-12-21 23:25:48.120904')
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 20)[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 4) ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 2) ORDER BY title LIMIT 1[0m
+Rendered line_items/_line_item.html.erb (5.1ms)
+Rendered carts/_cart.html.erb (7.9ms)
+Rendered line_items/create.js.rjs (9.1ms)
+Completed 200 OK in 78ms (Views: 13.4ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/line_items?product_id=3" for 127.0.0.1 at 2010-12-22 00:26:01 +0100
+  Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"DYqF2KkaHbxIwzh45rdcd8sMFgGX7fBoJaZtIwwEiww=", "_"=>"", "product_id"=>"3"}
+  [1m[35mCart Load (0.1ms)[0m  SELECT "carts".* FROM "carts" WHERE ("carts"."id" = 20) LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 3) ORDER BY title LIMIT 1[0m
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 20) AND ("line_items"."product_id" = 3) LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "line_items" ("cart_id", "created_at", "product_id", "quantity", "updated_at") VALUES (20, '2010-12-21 23:26:01.352835', 3, 1, '2010-12-21 23:26:01.352835')[0m
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 20)
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 4) ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 2) ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 3) ORDER BY title LIMIT 1[0m
+Rendered line_items/_line_item.html.erb (5.8ms)
+Rendered carts/_cart.html.erb (8.6ms)
+Rendered line_items/create.js.rjs (9.8ms)
+Completed 200 OK in 77ms (Views: 14.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-22 00:31:34 +0100
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.4ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE ("carts"."id" = 20) LIMIT 1[0m
+  [1m[35mLineItem Load (0.2ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 20)
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 4) ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 2) ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 3) ORDER BY title LIMIT 1[0m
+Rendered line_items/_line_item.html.erb (9.8ms)
+Rendered carts/_cart.html.erb (28.6ms)
+Rendered store/index.html.erb within layouts/application (58.2ms)
+Completed 200 OK in 78ms (Views: 60.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/line_items?product_id=4" for 127.0.0.1 at 2010-12-22 00:31:38 +0100
+  Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"DYqF2KkaHbxIwzh45rdcd8sMFgGX7fBoJaZtIwwEiww=", "_"=>"", "product_id"=>"4"}
+  [1m[35mCart Load (0.1ms)[0m  SELECT "carts".* FROM "carts" WHERE ("carts"."id" = 20) LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 4) ORDER BY title LIMIT 1[0m
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 20) AND ("line_items"."product_id" = 4) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "line_items" SET "quantity" = 4, "updated_at" = '2010-12-21 23:31:38.457627' WHERE ("line_items"."id" = 46)[0m
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 20)
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 4) ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 2) ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 3) ORDER BY title LIMIT 1[0m
+Rendered line_items/_line_item.html.erb (5.8ms)
+Rendered carts/_cart.html.erb (8.2ms)
+Rendered line_items/create.js.rjs (9.5ms)
+Completed 200 OK in 76ms (Views: 13.8ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/line_items?product_id=2" for 127.0.0.1 at 2010-12-22 00:31:40 +0100
+  Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"DYqF2KkaHbxIwzh45rdcd8sMFgGX7fBoJaZtIwwEiww=", "_"=>"", "product_id"=>"2"}
+  [1m[35mCart Load (0.1ms)[0m  SELECT "carts".* FROM "carts" WHERE ("carts"."id" = 20) LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 2) ORDER BY title LIMIT 1[0m
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 20) AND ("line_items"."product_id" = 2) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "line_items" SET "quantity" = 2, "updated_at" = '2010-12-21 23:31:40.502161' WHERE ("line_items"."id" = 47)[0m
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 20)
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 4) ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 2) ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 3) ORDER BY title LIMIT 1[0m
+Rendered line_items/_line_item.html.erb (5.8ms)
+Rendered carts/_cart.html.erb (8.3ms)
+Rendered line_items/create.js.rjs (9.6ms)
+Completed 200 OK in 75ms (Views: 13.9ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/line_items?product_id=2" for 127.0.0.1 at 2010-12-22 00:31:42 +0100
+  Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"DYqF2KkaHbxIwzh45rdcd8sMFgGX7fBoJaZtIwwEiww=", "_"=>"", "product_id"=>"2"}
+  [1m[35mCart Load (0.1ms)[0m  SELECT "carts".* FROM "carts" WHERE ("carts"."id" = 20) LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 2) ORDER BY title LIMIT 1[0m
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 20) AND ("line_items"."product_id" = 2) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "line_items" SET "quantity" = 3, "updated_at" = '2010-12-21 23:31:42.230781' WHERE ("line_items"."id" = 47)[0m
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 20)
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 4) ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 2) ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 3) ORDER BY title LIMIT 1[0m
+Rendered line_items/_line_item.html.erb (5.7ms)
+Rendered carts/_cart.html.erb (8.2ms)
+Rendered line_items/create.js.rjs (9.5ms)
+Completed 200 OK in 76ms (Views: 13.8ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/line_items?product_id=1" for 127.0.0.1 at 2010-12-22 00:31:44 +0100
+  Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"DYqF2KkaHbxIwzh45rdcd8sMFgGX7fBoJaZtIwwEiww=", "_"=>"", "product_id"=>"1"}
+  [1m[35mCart Load (0.1ms)[0m  SELECT "carts".* FROM "carts" WHERE ("carts"."id" = 20) LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 1) ORDER BY title LIMIT 1[0m
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 20) AND ("line_items"."product_id" = 1) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "line_items" ("cart_id", "created_at", "product_id", "quantity", "updated_at") VALUES (20, '2010-12-21 23:31:44.529992', 1, 1, '2010-12-21 23:31:44.529992')[0m
+  [1m[35mLineItem Load (0.2ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 20)
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 4) ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 2) ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 3) ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 1) ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (6.5ms)
+Rendered carts/_cart.html.erb (9.4ms)
+Rendered line_items/create.js.rjs (10.9ms)
+Completed 200 OK in 81ms (Views: 15.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/line_items?product_id=1" for 127.0.0.1 at 2010-12-22 00:31:48 +0100
+  Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"DYqF2KkaHbxIwzh45rdcd8sMFgGX7fBoJaZtIwwEiww=", "_"=>"", "product_id"=>"1"}
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE ("carts"."id" = 20) LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 1) ORDER BY title LIMIT 1
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 20) AND ("line_items"."product_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "line_items" SET "quantity" = 2, "updated_at" = '2010-12-21 23:31:48.103031' WHERE ("line_items"."id" = 49)
+  [1m[36mLineItem Load (0.2ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 20)[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 4) ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 2) ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 3) ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 1) ORDER BY title LIMIT 1[0m
+Rendered line_items/_line_item.html.erb (6.4ms)
+Rendered carts/_cart.html.erb (8.9ms)
+Rendered line_items/create.js.rjs (10.2ms)
+Completed 200 OK in 76ms (Views: 14.6ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/line_items?product_id=1" for 127.0.0.1 at 2010-12-22 00:31:51 +0100
+  Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"DYqF2KkaHbxIwzh45rdcd8sMFgGX7fBoJaZtIwwEiww=", "_"=>"", "product_id"=>"1"}
+  [1m[35mCart Load (0.1ms)[0m  SELECT "carts".* FROM "carts" WHERE ("carts"."id" = 20) LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 1) ORDER BY title LIMIT 1[0m
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 20) AND ("line_items"."product_id" = 1) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "line_items" SET "quantity" = 3, "updated_at" = '2010-12-21 23:31:52.031216' WHERE ("line_items"."id" = 49)[0m
+  [1m[35mLineItem Load (0.2ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 20)
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 4) ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 2) ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 3) ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 1) ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (6.3ms)
+Rendered carts/_cart.html.erb (8.8ms)
+Rendered line_items/create.js.rjs (10.2ms)
+Completed 200 OK in 76ms (Views: 14.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-22 00:32:00 +0100
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCart Load (0.1ms)[0m  SELECT "carts".* FROM "carts" WHERE ("carts"."id" = 20) LIMIT 1
+  [1m[36mLineItem Load (0.2ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 20)[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 4) ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 2) ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 3) ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 1) ORDER BY title LIMIT 1[0m
+Rendered line_items/_line_item.html.erb (33.1ms)
+Rendered carts/_cart.html.erb (45.9ms)
+Rendered store/index.html.erb within layouts/application (60.0ms)
+Completed 200 OK in 80ms (Views: 62.0ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/carts/20" for 127.0.0.1 at 2010-12-22 00:32:06 +0100
+  Processing by CartsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"DYqF2KkaHbxIwzh45rdcd8sMFgGX7fBoJaZtIwwEiww=", "id"=>"20"}
+  [1m[35mCart Load (0.1ms)[0m  SELECT "carts".* FROM "carts" WHERE ("carts"."id" = 20) LIMIT 1
+  [1m[36mLineItem Load (0.2ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 20)[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "line_items" WHERE ("line_items"."id" = 46)
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "line_items" WHERE ("line_items"."id" = 47)[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "line_items" WHERE ("line_items"."id" = 48)
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "line_items" WHERE ("line_items"."id" = 49)[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "carts" WHERE ("carts"."id" = 20)
+Redirected to http://localhost:3000/
+Completed 302 Found in 49ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-22 00:32:06 +0100
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "carts" ("created_at", "updated_at") VALUES ('2010-12-21 23:32:06.139883', '2010-12-21 23:32:06.139883')
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21)[0m
+Rendered collection (0.0ms)
+Rendered carts/_cart.html.erb (11.7ms)
+Rendered store/index.html.erb within layouts/application (22.7ms)
+Completed 200 OK in 67ms (Views: 25.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/product" for 127.0.0.1 at 2010-12-22 00:32:15 +0100
+
+ActionController::RoutingError (No route matches "/product"):
+  
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2010-12-22 00:32:18 +0100
+  Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.4ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+Rendered products/index.html.erb within layouts/application (18.8ms)
+Completed   in 46ms
+
+ActionView::Template::Error (undefined method `model_name' for NilClass:Class):
+    15: 
+    16:     <div id="columns">
+    17:       <div id="cart">
+    18:       <%= render @cart %>
+    19:       </div>
+    20:       <div id="side">
+    21:         <a href="http://www...." >Home</a><br />
+  app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb___667672944_77342390_885669152'
+  app/controllers/products_controller.rb:7:in `index'
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.4ms)
+
+
+Started GET "/store" for 127.0.0.1 at 2010-12-22 00:32:21 +0100
+
+ActionController::RoutingError (No route matches "/store"):
+  
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2010-12-22 00:32:28 +0100
+  Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+Rendered products/index.html.erb within layouts/application (28.2ms)
+Completed   in 40ms
+
+ActionView::Template::Error (undefined method `model_name' for NilClass:Class):
+    15: 
+    16:     <div id="columns">
+    17:       <div id="cart">
+    18:       <%= render @cart %>
+    19:       </div>
+    20:       <div id="side">
+    21:         <a href="http://www...." >Home</a><br />
+  app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb___667672944_76717340_885669152'
+  app/controllers/products_controller.rb:7:in `index'
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.5ms)
+
+
+Started GET "/product" for 127.0.0.1 at 2010-12-22 00:32:31 +0100
+
+ActionController::RoutingError (No route matches "/product"):
+  
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/products/" for 127.0.0.1 at 2010-12-22 00:32:44 +0100
+  Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.4ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+Rendered products/index.html.erb within layouts/application (28.7ms)
+Completed   in 41ms
+
+ActionView::Template::Error (undefined method `model_name' for NilClass:Class):
+    15: 
+    16:     <div id="columns">
+    17:       <div id="cart">
+    18:       <%= render @cart %>
+    19:       </div>
+    20:       <div id="side">
+    21:         <a href="http://www...." >Home</a><br />
+  app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb___667672944_74450570_885669152'
+  app/controllers/products_controller.rb:7:in `index'
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.4ms)
+
+
+Started GET "/products/" for 127.0.0.1 at 2010-12-22 00:33:35 +0100
+  Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+Rendered products/index.html.erb within layouts/application (28.1ms)
+Completed   in 40ms
+
+ActionView::Template::Error (undefined method `model_name' for NilClass:Class):
+    15: 
+    16:     <div id="columns">
+    17:       <div id="cart">
+    18:       <%= render @cart %>
+    19:       </div>
+    20:       <div id="side">
+    21:         <a href="http://www...." >Home</a><br />
+  app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb___667672944_74382800_885669152'
+  app/controllers/products_controller.rb:7:in `index'
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.4ms)
+
+
+Started GET "/products/" for 127.0.0.1 at 2010-12-22 00:33:54 +0100
+  Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.4ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+Rendered products/index.html.erb within layouts/application (27.3ms)
+Completed   in 39ms
+
+ActionView::Template::Error (undefined method `model_name' for NilClass:Class):
+    15: 
+    16:     <div id="columns">
+    17:       <div id="cart">
+    18:       <%= render @cart %>
+    19:       </div>
+    20:       <div id="side">
+    21:         <a href="http://www...." >Home</a><br />
+  app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb___667672944_74545730_885669152'
+  app/controllers/products_controller.rb:7:in `index'
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.3ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2010-12-22 00:33:57 +0100
+  Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+Rendered products/index.html.erb within layouts/application (27.5ms)
+Completed   in 39ms
+
+ActionView::Template::Error (undefined method `model_name' for NilClass:Class):
+    15: 
+    16:     <div id="columns">
+    17:       <div id="cart">
+    18:       <%= render @cart %>
+    19:       </div>
+    20:       <div id="side">
+    21:         <a href="http://www...." >Home</a><br />
+  app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb___667672944_76477980_885669152'
+  app/controllers/products_controller.rb:7:in `index'
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.4ms)
+
+
+Started GET "/products/" for 127.0.0.1 at 2010-12-22 00:34:08 +0100
+  Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.4ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+Rendered products/index.html.erb within layouts/application (27.4ms)
+Completed   in 39ms
+
+ActionView::Template::Error (undefined method `model_name' for NilClass:Class):
+    15: 
+    16:     <div id="columns">
+    17:       <div id="cart">
+    18:       <%= render @cart %>
+    19:       </div>
+    20:       <div id="side">
+    21:         <a href="http://www...." >Home</a><br />
+  app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb___667672944_76537420_885669152'
+  app/controllers/products_controller.rb:7:in `index'
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.3ms)
+
+
+Started GET "/products/index/" for 127.0.0.1 at 2010-12-22 00:34:13 +0100
+  Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 0) ORDER BY title LIMIT 1[0m
+Completed   in 11ms
+
+ActiveRecord::RecordNotFound (Couldn't find Product with ID=index):
+  app/controllers/products_controller.rb:16:in `show'
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (16.5ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (20.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-22 00:34:19 +0100
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.4ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE ("carts"."id" = 21) LIMIT 1[0m
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21)
+Rendered collection (0.0ms)
+Rendered carts/_cart.html.erb (28.1ms)
+Rendered store/index.html.erb within layouts/application (42.0ms)
+Completed 200 OK in 62ms (Views: 44.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/line_items?product_id=2" for 127.0.0.1 at 2010-12-22 00:34:24 +0100
+  Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"DYqF2KkaHbxIwzh45rdcd8sMFgGX7fBoJaZtIwwEiww=", "_"=>"", "product_id"=>"2"}
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE ("carts"."id" = 21) LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 2) ORDER BY title LIMIT 1
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21) AND ("line_items"."product_id" = 2) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "line_items" ("cart_id", "created_at", "product_id", "quantity", "updated_at") VALUES (21, '2010-12-21 23:34:24.507611', 2, 1, '2010-12-21 23:34:24.507611')
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21)[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 2) ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (4.5ms)
+Rendered carts/_cart.html.erb (7.2ms)
+Rendered line_items/create.js.rjs (8.4ms)
+Completed 200 OK in 75ms (Views: 12.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/line_items?product_id=2" for 127.0.0.1 at 2010-12-22 00:34:27 +0100
+  Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"DYqF2KkaHbxIwzh45rdcd8sMFgGX7fBoJaZtIwwEiww=", "_"=>"", "product_id"=>"2"}
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE ("carts"."id" = 21) LIMIT 1[0m
+  [1m[35mProduct Load (0.6ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 2) ORDER BY title LIMIT 1
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21) AND ("line_items"."product_id" = 2) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "line_items" SET "quantity" = 2, "updated_at" = '2010-12-21 23:34:27.257377' WHERE ("line_items"."id" = 50)
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21)[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 2) ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (4.5ms)
+Rendered carts/_cart.html.erb (6.8ms)
+Rendered line_items/create.js.rjs (8.1ms)
+Completed 200 OK in 74ms (Views: 12.5ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/line_items?product_id=3" for 127.0.0.1 at 2010-12-22 00:34:28 +0100
+  Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"DYqF2KkaHbxIwzh45rdcd8sMFgGX7fBoJaZtIwwEiww=", "_"=>"", "product_id"=>"3"}
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE ("carts"."id" = 21) LIMIT 1[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 3) ORDER BY title LIMIT 1
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21) AND ("line_items"."product_id" = 3) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "line_items" ("cart_id", "created_at", "product_id", "quantity", "updated_at") VALUES (21, '2010-12-21 23:34:28.849082', 3, 1, '2010-12-21 23:34:28.849082')
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21)[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 2) ORDER BY title LIMIT 1
+  [1m[36mProduct Load (15.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 3) ORDER BY title LIMIT 1[0m
+Rendered line_items/_line_item.html.erb (20.6ms)
+Rendered carts/_cart.html.erb (23.9ms)
+Rendered line_items/create.js.rjs (25.3ms)
+Completed 200 OK in 92ms (Views: 14.6ms | ActiveRecord: 15.9ms)
+
+
+Started POST "/line_items?product_id=3" for 127.0.0.1 at 2010-12-22 00:34:30 +0100
+  Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"DYqF2KkaHbxIwzh45rdcd8sMFgGX7fBoJaZtIwwEiww=", "_"=>"", "product_id"=>"3"}
+  [1m[35mCart Load (0.1ms)[0m  SELECT "carts".* FROM "carts" WHERE ("carts"."id" = 21) LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 3) ORDER BY title LIMIT 1[0m
+  [1m[35mLineItem Load (0.3ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21) AND ("line_items"."product_id" = 3) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "line_items" SET "quantity" = 2, "updated_at" = '2010-12-21 23:34:30.801368' WHERE ("line_items"."id" = 51)[0m
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21)
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 2) ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 3) ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (5.2ms)
+Rendered carts/_cart.html.erb (7.7ms)
+Rendered line_items/create.js.rjs (9.0ms)
+Completed 200 OK in 74ms (Views: 13.6ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/line_items?product_id=3" for 127.0.0.1 at 2010-12-22 00:34:33 +0100
+  Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"DYqF2KkaHbxIwzh45rdcd8sMFgGX7fBoJaZtIwwEiww=", "_"=>"", "product_id"=>"3"}
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE ("carts"."id" = 21) LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 3) ORDER BY title LIMIT 1
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21) AND ("line_items"."product_id" = 3) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "line_items" SET "quantity" = 3, "updated_at" = '2010-12-21 23:34:33.625616' WHERE ("line_items"."id" = 51)
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21)[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 2) ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 3) ORDER BY title LIMIT 1[0m
+Rendered line_items/_line_item.html.erb (5.1ms)
+Rendered carts/_cart.html.erb (7.5ms)
+Rendered line_items/create.js.rjs (8.8ms)
+Completed 200 OK in 74ms (Views: 13.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/line_items?product_id=3" for 127.0.0.1 at 2010-12-22 00:34:34 +0100
+  Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"DYqF2KkaHbxIwzh45rdcd8sMFgGX7fBoJaZtIwwEiww=", "_"=>"", "product_id"=>"3"}
+  [1m[35mCart Load (0.1ms)[0m  SELECT "carts".* FROM "carts" WHERE ("carts"."id" = 21) LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 3) ORDER BY title LIMIT 1[0m
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21) AND ("line_items"."product_id" = 3) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "line_items" SET "quantity" = 4, "updated_at" = '2010-12-21 23:34:35.066167' WHERE ("line_items"."id" = 51)[0m
+  [1m[35mLineItem Load (0.1ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21)
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 2) ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 3) ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (5.2ms)
+Rendered carts/_cart.html.erb (7.6ms)
+Rendered line_items/create.js.rjs (8.9ms)
+Completed 200 OK in 75ms (Views: 13.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-22 00:34:44 +0100
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCart Load (0.1ms)[0m  SELECT "carts".* FROM "carts" WHERE ("carts"."id" = 21) LIMIT 1
+  [1m[36mLineItem Load (0.2ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21)[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 2) ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 3) ORDER BY title LIMIT 1[0m
+Rendered line_items/_line_item.html.erb (14.9ms)
+Rendered carts/_cart.html.erb (43.7ms)
+Rendered store/index.html.erb within layouts/application (57.7ms)
+Completed 200 OK in 78ms (Views: 59.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-22 00:34:52 +0100
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.5ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE ("carts"."id" = 21) LIMIT 1[0m
+  [1m[35mLineItem Load (0.2ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21)
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 2) ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 3) ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (30.8ms)
+Rendered carts/_cart.html.erb (43.8ms)
+Rendered store/index.html.erb within layouts/application (57.9ms)
+Completed 200 OK in 94ms (Views: 60.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/product" for 127.0.0.1 at 2010-12-22 00:34:55 +0100
+
+ActionController::RoutingError (No route matches "/product"):
+  
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/product" for 127.0.0.1 at 2010-12-22 00:34:57 +0100
+
+ActionController::RoutingError (No route matches "/product"):
+  
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/product" for 127.0.0.1 at 2010-12-22 00:34:58 +0100
+
+ActionController::RoutingError (No route matches "/product"):
+  
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/product" for 127.0.0.1 at 2010-12-22 00:34:58 +0100
+
+ActionController::RoutingError (No route matches "/product"):
+  
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/product" for 127.0.0.1 at 2010-12-22 00:34:58 +0100
+
+ActionController::RoutingError (No route matches "/product"):
+  
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2010-12-22 00:35:00 +0100
+  Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+Rendered products/index.html.erb within layouts/application (27.9ms)
+Completed   in 40ms
+
+ActionView::Template::Error (undefined method `model_name' for NilClass:Class):
+    15: 
+    16:     <div id="columns">
+    17:       <div id="cart">
+    18:       <%= render @cart %>
+    19:       </div>
+    20:       <div id="side">
+    21:         <a href="http://www...." >Home</a><br />
+  app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb___667672944_73780530_885669152'
+  app/controllers/products_controller.rb:7:in `index'
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.4ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2010-12-22 00:35:22 +0100
+  Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.4ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+Completed   in 119ms
+
+SystemStackError (stack level too deep):
+  
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.9ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.2ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2010-12-22 00:35:29 +0100
+  Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+Rendered products/index.html.erb within layouts/application (12.5ms)
+Completed   in 24ms
+
+ActionView::Template::Error (undefined method `model_name' for NilClass:Class):
+    15: 
+    16:     <div id="columns">
+    17:       <div id="cart">
+    18:       <%= render @cart %>
+    19:       </div>
+    20:       <div id="side">
+    21:         <a href="http://www...." >Home</a><br />
+  app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb___667672944_83429190_885669152'
+  app/controllers/products_controller.rb:7:in `index'
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-22 00:35:59 +0100
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCart Load (0.1ms)[0m  SELECT "carts".* FROM "carts" WHERE ("carts"."id" = 21) LIMIT 1
+  [1m[36mLineItem Load (0.2ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21)[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 2) ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 3) ORDER BY title LIMIT 1[0m
+Rendered line_items/_line_item.html.erb (14.3ms)
+Rendered carts/_cart.html.erb (26.9ms)
+Rendered store/index.html.erb within layouts/application (41.9ms)
+Completed 200 OK in 62ms (Views: 44.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-22 00:58:43 +0100
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.4ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE ("carts"."id" = 21) LIMIT 1[0m
+  [1m[35mLineItem Load (0.2ms)[0m  SELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21)
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 2) ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 3) ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (32.0ms)
+Rendered carts/_cart.html.erb (44.3ms)
+Rendered store/index.html.erb within layouts/application (58.2ms)
+Completed 200 OK in 78ms (Views: 60.4ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/line_items?product_id=4" for 127.0.0.1 at 2010-12-22 00:58:46 +0100
+  Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"DYqF2KkaHbxIwzh45rdcd8sMFgGX7fBoJaZtIwwEiww=", "_"=>"", "product_id"=>"4"}
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE ("carts"."id" = 21) LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 4) ORDER BY title LIMIT 1
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21) AND ("line_items"."product_id" = 4) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "line_items" ("cart_id", "created_at", "product_id", "quantity", "updated_at") VALUES (21, '2010-12-21 23:58:46.316813', 4, 1, '2010-12-21 23:58:46.316813')
+  [1m[36mLineItem Load (0.2ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21)[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 2) ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 3) ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 4) ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (5.8ms)
+Rendered carts/_cart.html.erb (8.7ms)
+Rendered line_items/create.js.rjs (10.0ms)
+Completed 200 OK in 80ms (Views: 14.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/line_items?product_id=4" for 127.0.0.1 at 2010-12-22 00:58:48 +0100
+  Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"DYqF2KkaHbxIwzh45rdcd8sMFgGX7fBoJaZtIwwEiww=", "_"=>"", "product_id"=>"4"}
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE ("carts"."id" = 21) LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 4) ORDER BY title LIMIT 1
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21) AND ("line_items"."product_id" = 4) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "line_items" SET "quantity" = 2, "updated_at" = '2010-12-21 23:58:48.904247' WHERE ("line_items"."id" = 52)
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21)[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 2) ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 3) ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 4) ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (5.7ms)
+Rendered carts/_cart.html.erb (8.2ms)
+Rendered line_items/create.js.rjs (9.5ms)
+Completed 200 OK in 77ms (Views: 13.8ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/line_items?product_id=4" for 127.0.0.1 at 2010-12-22 00:58:49 +0100
+  Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"DYqF2KkaHbxIwzh45rdcd8sMFgGX7fBoJaZtIwwEiww=", "_"=>"", "product_id"=>"4"}
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE ("carts"."id" = 21) LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 4) ORDER BY title LIMIT 1
+  [1m[36mLineItem Load (0.2ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21) AND ("line_items"."product_id" = 4) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "line_items" SET "quantity" = 3, "updated_at" = '2010-12-21 23:58:49.722977' WHERE ("line_items"."id" = 52)
+  [1m[36mLineItem Load (0.2ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21)[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 2) ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 3) ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 4) ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (5.9ms)
+Rendered carts/_cart.html.erb (8.6ms)
+Rendered line_items/create.js.rjs (9.9ms)
+Completed 200 OK in 80ms (Views: 14.2ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/line_items?product_id=4" for 127.0.0.1 at 2010-12-22 00:58:50 +0100
+  Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"DYqF2KkaHbxIwzh45rdcd8sMFgGX7fBoJaZtIwwEiww=", "_"=>"", "product_id"=>"4"}
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE ("carts"."id" = 21) LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 4) ORDER BY title LIMIT 1
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21) AND ("line_items"."product_id" = 4) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "line_items" SET "quantity" = 4, "updated_at" = '2010-12-21 23:58:50.418308' WHERE ("line_items"."id" = 52)
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21)[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 2) ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 3) ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 4) ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (5.9ms)
+Rendered carts/_cart.html.erb (8.5ms)
+Rendered line_items/create.js.rjs (9.8ms)
+Completed 200 OK in 79ms (Views: 14.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/line_items?product_id=4" for 127.0.0.1 at 2010-12-22 00:58:51 +0100
+  Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"DYqF2KkaHbxIwzh45rdcd8sMFgGX7fBoJaZtIwwEiww=", "_"=>"", "product_id"=>"4"}
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE ("carts"."id" = 21) LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 4) ORDER BY title LIMIT 1
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21) AND ("line_items"."product_id" = 4) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "line_items" SET "quantity" = 5, "updated_at" = '2010-12-21 23:58:51.217970' WHERE ("line_items"."id" = 52)
+  [1m[36mLineItem Load (0.9ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21)[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 2) ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 3) ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 4) ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (6.0ms)
+Rendered carts/_cart.html.erb (9.3ms)
+Rendered line_items/create.js.rjs (10.7ms)
+Completed 200 OK in 80ms (Views: 14.3ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/line_items?product_id=4" for 127.0.0.1 at 2010-12-22 00:58:51 +0100
+  Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"DYqF2KkaHbxIwzh45rdcd8sMFgGX7fBoJaZtIwwEiww=", "_"=>"", "product_id"=>"4"}
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE ("carts"."id" = 21) LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 4) ORDER BY title LIMIT 1
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21) AND ("line_items"."product_id" = 4) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "line_items" SET "quantity" = 6, "updated_at" = '2010-12-21 23:58:51.961489' WHERE ("line_items"."id" = 52)
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21)[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 2) ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 3) ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 4) ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (7.2ms)
+Rendered carts/_cart.html.erb (9.7ms)
+Rendered line_items/create.js.rjs (11.0ms)
+Completed 200 OK in 79ms (Views: 15.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/line_items?product_id=4" for 127.0.0.1 at 2010-12-22 00:58:52 +0100
+  Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"DYqF2KkaHbxIwzh45rdcd8sMFgGX7fBoJaZtIwwEiww=", "_"=>"", "product_id"=>"4"}
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE ("carts"."id" = 21) LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 4) ORDER BY title LIMIT 1
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21) AND ("line_items"."product_id" = 4) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "line_items" SET "quantity" = 7, "updated_at" = '2010-12-21 23:58:52.657065' WHERE ("line_items"."id" = 52)
+  [1m[36mLineItem Load (0.2ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21)[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 2) ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 3) ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 4) ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (5.9ms)
+Rendered carts/_cart.html.erb (8.5ms)
+Rendered line_items/create.js.rjs (9.8ms)
+Completed 200 OK in 78ms (Views: 14.2ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/line_items?product_id=4" for 127.0.0.1 at 2010-12-22 00:58:53 +0100
+  Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"DYqF2KkaHbxIwzh45rdcd8sMFgGX7fBoJaZtIwwEiww=", "_"=>"", "product_id"=>"4"}
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE ("carts"."id" = 21) LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 4) ORDER BY title LIMIT 1
+  [1m[36mLineItem Load (1.2ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21) AND ("line_items"."product_id" = 4) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "line_items" SET "quantity" = 8, "updated_at" = '2010-12-21 23:58:53.393409' WHERE ("line_items"."id" = 52)
+  [1m[36mLineItem Load (0.2ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21)[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 2) ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 3) ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 4) ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (6.1ms)
+Rendered carts/_cart.html.erb (8.7ms)
+Rendered line_items/create.js.rjs (10.0ms)
+Completed 200 OK in 78ms (Views: 14.3ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/line_items?product_id=4" for 127.0.0.1 at 2010-12-22 00:58:54 +0100
+  Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"DYqF2KkaHbxIwzh45rdcd8sMFgGX7fBoJaZtIwwEiww=", "_"=>"", "product_id"=>"4"}
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE ("carts"."id" = 21) LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 4) ORDER BY title LIMIT 1
+  [1m[36mLineItem Load (0.3ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21) AND ("line_items"."product_id" = 4) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "line_items" SET "quantity" = 9, "updated_at" = '2010-12-21 23:58:54.193277' WHERE ("line_items"."id" = 52)
+  [1m[36mLineItem Load (0.2ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21)[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 2) ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 3) ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 4) ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (5.9ms)
+Rendered carts/_cart.html.erb (8.5ms)
+Rendered line_items/create.js.rjs (9.9ms)
+Completed 200 OK in 78ms (Views: 14.3ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/line_items?product_id=3" for 127.0.0.1 at 2010-12-22 00:58:56 +0100
+  Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"DYqF2KkaHbxIwzh45rdcd8sMFgGX7fBoJaZtIwwEiww=", "_"=>"", "product_id"=>"3"}
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE ("carts"."id" = 21) LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 3) ORDER BY title LIMIT 1
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21) AND ("line_items"."product_id" = 3) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "line_items" SET "quantity" = 5, "updated_at" = '2010-12-21 23:58:56.152660' WHERE ("line_items"."id" = 51)
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21)[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 2) ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 3) ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 4) ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (5.8ms)
+Rendered carts/_cart.html.erb (8.3ms)
+Rendered line_items/create.js.rjs (9.6ms)
+Completed 200 OK in 77ms (Views: 13.9ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/line_items?product_id=3" for 127.0.0.1 at 2010-12-22 00:58:57 +0100
+  Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"DYqF2KkaHbxIwzh45rdcd8sMFgGX7fBoJaZtIwwEiww=", "_"=>"", "product_id"=>"3"}
+  [1m[36mCart Load (0.1ms)[0m  [1mSELECT "carts".* FROM "carts" WHERE ("carts"."id" = 21) LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 3) ORDER BY title LIMIT 1
+  [1m[36mLineItem Load (0.1ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21) AND ("line_items"."product_id" = 3) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "line_items" SET "quantity" = 6, "updated_at" = '2010-12-21 23:58:57.559307' WHERE ("line_items"."id" = 51)
+  [1m[36mLineItem Load (0.2ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21)[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 2) ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 3) ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 4) ORDER BY title LIMIT 1
+Rendered line_items/_line_item.html.erb (5.8ms)
+Rendered carts/_cart.html.erb (8.2ms)
+Rendered line_items/create.js.rjs (9.6ms)
+Completed 200 OK in 76ms (Views: 13.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-22 00:59:06 +0100
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+  [1m[35mCart Load (0.1ms)[0m  SELECT "carts".* FROM "carts" WHERE ("carts"."id" = 21) LIMIT 1
+  [1m[36mLineItem Load (0.2ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE ("line_items".cart_id = 21)[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHERE ("products"."id" = 2) ORDER BY title LIMIT 1
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE ("products"."id" = 3) ORDER BY title LIMIT 1[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" WHE
