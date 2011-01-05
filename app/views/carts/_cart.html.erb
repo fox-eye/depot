@@ -12,4 +12,5 @@
 
 </table>
 
-<%= button_to "Clear cart",cart,:method => "delete",:confirm=>"Are you sure to want to empty your cart ?"  %>
+<%= button_to "Clear cart",cart,:method => :delete,:confirm=>"Are you sure to want to empty your cart ?"  %>
+<%= button_to "Check out !",new_order_path,:method => :get  %>
